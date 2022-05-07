@@ -1,0 +1,2 @@
+C:\Users\Maja\Desktop\doc\zadania rekrutacyjne\binar apps\Wordcloud_Game\Wordcloud_Game\obj\Debug\Wordcloud_Game.njsproj.CoreCompileInputs.cache
+C:\Users\Maja\Desktop\doc\zadania rekrutacyjne\binar apps\Wordcloud_Game\Wordcloud_Game\bin\Microsoft.NodejsTools.WebRole.dll

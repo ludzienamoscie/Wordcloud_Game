@@ -1,0 +1,9 @@
+{
+  "name": "wordcloud_game",
+  "version": "0.0.0",
+  "description": "Wordcloud_Game",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}

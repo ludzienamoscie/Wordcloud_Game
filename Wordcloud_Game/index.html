@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="game.css" />
+    <script src="app.js" defer></script>
+    <title>Wordcloud Game</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Wordcloud Game</h1>
+        <input class="nicknameInput" type="text" id="nicknameInput" placeholder="Enter your nickname here... ">
+        <button class="submitButton" type="button" onclick="submitNickname()" id="submitButton">play</button>        
+    </header>
+    <div class="content" style="height:0%">
+        <div id="gameScreen" style="display:none;">
+            <h2>Select animals</h2>
+            <div id="gameBoard">
+            </div>
+            <button class="answersButton" type="button" onclick="submitAnswers()" id="answersButton">finish game</button>
+        </div>
+        <div id="scoreScreen" style="display:none;">
+
+        </div>
+    </div>
+    <footer id="footer">
+        <p>&copy; Maja Frydlewska 2022</p>
+    </footer>
+</body>
+</html>

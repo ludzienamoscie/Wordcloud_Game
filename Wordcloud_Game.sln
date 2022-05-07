@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Wordcloud_Game", "Wordcloud_Game\Wordcloud_Game.njsproj", "{B6336BB6-5522-4E40-A428-C314547BA568}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6336BB6-5522-4E40-A428-C314547BA568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6336BB6-5522-4E40-A428-C314547BA568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6336BB6-5522-4E40-A428-C314547BA568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6336BB6-5522-4E40-A428-C314547BA568}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {498C399C-B569-4E43-866E-F548829CC3C9}
+	EndGlobalSection
+EndGlobal
