@@ -82,6 +82,7 @@ function checkGuess() {
 
 let allAnswers = 0
 let rightAnswers = 0
+let selectedIds = []
 
 function randomPosition(length) {
     // There's more spaces than words and ratio rows to columns is 3:1
@@ -102,7 +103,6 @@ function randomPosition(length) {
         if (!duplicate) {
             positions.push({x: col, y: row})
         }
-        console.log(positions.length)
     }
     return positions
 }
@@ -125,6 +125,34 @@ function submitNickname() {
     renderGame()
 }
 
+function wordCallback(id) {
+    // Removing previously selected element
+    if (selectedIds.includes(id)) {
+        selectedIds.splice(selectedIds.indexOf(id), 1)
+        document.getElementById("word" + id).style.color = "black"
+    } else {
+        document.getElementById("word" + id).style.color = "#8c92ac"
+        selectedIds.push(id)
+    }
+}
+
+function checkAnswers() {
+    for (let index in selectedIds) {
+        let id = selectedIds[index]
+        if (rightAnswers.includes(allAnswers[id])) {
+            document.getElementById("word" + id).style.color = "#8fbc8f"
+        } else {
+            document.getElementById("word" + id).style.color = "#cc3333"
+        }
+    }
+    for (let index in rightAnswers) {
+        let id = allAnswers.indexOf(rightAnswers[index])
+        if (!selectedIds.includes(id)) {
+            document.getElementById("word" + id).style.color = "#8fbc8f"
+        }
+    }
+}
+
 function renderGame() {
     let choice = Math.floor(Math.random() * questionsData.length)
     let question = questionsData[choice].question
@@ -140,13 +168,13 @@ function renderGame() {
         wordNode.setAttribute("id", "word"+i); 
         wordNode.setAttribute("onclick", "wordCallback("+i+")");     
         wordNode.style.position = "relative" 
+        wordNode.style.fontWeight = "bold"
         wordNode.style.margin = "10px"
         wordNode.style.top = (wordPositions[i].y * 90 / nRows + 10) + "%"
         wordNode.style.left = wordPositions[i].x * 70 / nColumns + "%"
         wordNode.innerHTML = allAnswers[i]
         document.getElementById("gameBoard").appendChild(wordNode)
     }
-    console.log(wordPositions)
 }
 
 function submitAnswers() {
