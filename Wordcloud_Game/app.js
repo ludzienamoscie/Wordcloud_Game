@@ -85,17 +85,15 @@ let rightAnswers = 0
 let selectedIds = []
 
 function randomPosition(length) {
-    // There's more spaces than words and ratio rows to columns is 3:1
-    let nRows = length
-    let nColumns = Math.ceil(1/3 * length)
     let positions = []
     while (positions.length < length) {
-        let row = Math.floor(Math.random() * nRows)
-        let col = Math.floor(Math.random() * nColumns)
+        let row = Math.random()
+        let col = Math.random()
         // If this position is not yet included, we can add it
         let duplicate = false
         positions.forEach((element, index, array) => {
-            if (element.x == col && element.y == row && (element.x+1 == col || element.x-1 == col)) {
+            // 10% difference between words
+            if (Math.abs(element.x - col) < 0.1 && Math.abs(element.y - row) < 0.1) {
                 duplicate = true
                 return
             }
@@ -137,20 +135,28 @@ function wordCallback(id) {
 }
 
 function checkAnswers() {
+    let points = 0
     for (let index in selectedIds) {
         let id = selectedIds[index]
         if (rightAnswers.includes(allAnswers[id])) {
             document.getElementById("word" + id).style.color = "#8fbc8f"
+            points += 2
         } else {
             document.getElementById("word" + id).style.color = "#cc3333"
+            points -= 1
         }
     }
     for (let index in rightAnswers) {
         let id = allAnswers.indexOf(rightAnswers[index])
         if (!selectedIds.includes(id)) {
             document.getElementById("word" + id).style.color = "#8fbc8f"
+            points -= 1
         }
     }
+    let button = document.getElementById("answersButton")
+    button.innerHTML = "finish game"
+    button.setAttribute("onclick", "submitAnswers()")
+    document.getElementById("score").innerHTML = points + " points"
 }
 
 function renderGame() {
@@ -161,17 +167,16 @@ function renderGame() {
     allAnswers = questionsData[choice].all_words
     rightAnswers = questionsData[choice].good_words
     let wordPositions = randomPosition(allAnswers.length)
-    let nRows = allAnswers.length
-    let nColumns = Math.ceil(1/3 * allAnswers.length)
+
     for (let i = 0; i < wordPositions.length; i++) {
         let wordNode = document.createElement('label');
         wordNode.setAttribute("id", "word"+i); 
         wordNode.setAttribute("onclick", "wordCallback("+i+")");     
-        wordNode.style.position = "relative" 
+        wordNode.style.position = "absolute" 
         wordNode.style.fontWeight = "bold"
         wordNode.style.margin = "10px"
-        wordNode.style.top = (wordPositions[i].y * 90 / nRows + 10) + "%"
-        wordNode.style.left = wordPositions[i].x * 70 / nColumns + "%"
+        wordNode.style.top = wordPositions[i].y * 100 + "%"
+        wordNode.style.left = wordPositions[i].x * 90 + "%"
         wordNode.innerHTML = allAnswers[i]
         document.getElementById("gameBoard").appendChild(wordNode)
     }
