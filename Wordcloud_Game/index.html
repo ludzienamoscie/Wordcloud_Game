@@ -18,17 +18,16 @@
     </header>
     <div class="content" style="height:0%">
         <div id="gameScreen" style="display:none;">
-            <h2>Select animals</h2>
+            <h2 id="question"></h2>
             <div id="gameBoard">
             </div>
-            <button class="answersButton" type="button" onclick="submitAnswers()" id="answersButton">finish game</button>
+            <button class="answersButton" type="button" onclick="submitAnswers()" id="answersButton">check answers</button>
         </div>
         <div id="scoreScreen" style="display:none;">
-
+            <h3 id="congrats">Congratulations, </h3>
+            <script>document.getElementById("nicknameInput")</script></h3>
         </div>
     </div>
-    <footer id="footer">
-        <p>&copy; Maja Frydlewska 2022</p>
-    </footer>
+   
 </body>
 </html>

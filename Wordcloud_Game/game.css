@@ -80,7 +80,7 @@ div #gameScreen h2 {
 
 #gameBoard {
     display: block;
-    width: 80%;
+    width: 98%;
     height: 600px;
     border: 5px solid black;
     margin-top: 10px;
@@ -88,9 +88,3 @@ div #gameScreen h2 {
     margin-right: auto;
 }
 
-footer {
-    text-align: center;
-    position: relative;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
