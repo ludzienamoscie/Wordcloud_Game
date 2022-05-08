@@ -32,6 +32,10 @@ header h1 {
     text-align: center;
 }
 
+header h3 {
+    text-align: center;
+}
+
 div #gameScreen h2 {
     padding-top: 0.8em;
     text-align: center;

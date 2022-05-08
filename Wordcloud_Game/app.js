@@ -172,10 +172,11 @@ function renderGame() {
         let wordNode = document.createElement('label');
         wordNode.setAttribute("id", "word"+i); 
         wordNode.setAttribute("onclick", "wordCallback("+i+")");     
-        wordNode.style.position = "absolute" 
+        wordNode.style.position = "absolute"
+        document.getElementById("gameBoard").style.position = "relative"
         wordNode.style.fontWeight = "bold"
         wordNode.style.margin = "10px"
-        wordNode.style.top = wordPositions[i].y * 100 + "%"
+        wordNode.style.top = wordPositions[i].y * 90 + "%"
         wordNode.style.left = wordPositions[i].x * 90 + "%"
         wordNode.innerHTML = allAnswers[i]
         document.getElementById("gameBoard").appendChild(wordNode)
