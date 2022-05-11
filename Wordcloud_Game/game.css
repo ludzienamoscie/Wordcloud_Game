@@ -4,20 +4,13 @@ body {
 }
 
 body {
-    /*flex-direction: column;*/
     font-family: FreeMono, monospace;
     margin: 0;
 }
 
 .content {
-    /*flex: 1 0 auto;*/
     min-height: 30%;
     position: relative;
-}
-
-#gameScreen {
-    padding-bottom: 50px;
-    height: 100%;
 }
 
 header h1 {
@@ -29,15 +22,6 @@ header h1 {
     font-size: 4em;
     padding: 0.2em;
     border-radius: 50px;
-    text-align: center;
-}
-
-header h3 {
-    text-align: center;
-}
-
-div #gameScreen h2 {
-    padding-top: 0.8em;
     text-align: center;
 }
 
@@ -68,9 +52,19 @@ div #gameScreen h2 {
     padding: 0.4em;
 }
 
-.submitButton:hover {
-    background-color: #e8ccd7;
-    font-style: italic;
+    .submitButton:hover {
+        background-color: #e8ccd7;
+        font-style: italic;
+    }
+
+#gameScreen {
+    padding-bottom: 50px;
+    height: 100%;
+}
+
+div #gameScreen h2 {
+    padding-top: 0.8em;
+    text-align: center;
 }
 
 #answersButton:hover {
@@ -92,3 +86,12 @@ div #gameScreen h2 {
     margin-right: auto;
 }
 
+#scoreScreen {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
