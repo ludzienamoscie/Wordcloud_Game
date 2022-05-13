@@ -86,6 +86,11 @@ div #gameScreen h2 {
     margin-right: auto;
 }
 
+div #scoreScreen h5 {
+    color: #a1caf1;
+    font-size: 16px;
+}
+
 #scoreScreen {
     margin: 0;
     position: absolute;
